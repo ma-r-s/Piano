@@ -1,0 +1,4 @@
+    <button class="h-16 w-6 bg-black rounded-b-full hover:bg-gray-600" />
+    <button class="drop-shadow-lg h-28 w-8 bg-white rounded-md hover:bg-gray-200"/>
+    {#each notasBlancas as notaB}
+    {/each}
