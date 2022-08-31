@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Keyboard from "./Keyboard.svelte";
+  import Keyboard from "./keyboard.svelte";
 
   let nota: string = "";
 </script>
