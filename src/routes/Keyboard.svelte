@@ -18,7 +18,7 @@
     ];
 </script>
 
-<div class="my-8 flex justify-center">
+<div class="flex">
     {#each Array(octaves * 12 + 1) as _, note}
         {#if natural[note % 12]}
             <button
