@@ -26,5 +26,5 @@
 	<h1 class="p-4 text-3xl font-bold underline">Nota: {lastNote}</h1>
 	<Keyboard on:notePressed={notePressed} bind:selected bind:octaves />
 	<Play bind:playing />
-	<Selector bind:selectedChords />
+	<Selector bind:selectedChords maxChords={8} />
 </div>
