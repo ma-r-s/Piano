@@ -1,4 +1,6 @@
 <script>
+	import { createEventDispatcher } from "svelte";
+	const dispatch = createEventDispatcher();
 	export let selectedChords = [
 		{ note: "C", quality: "M7" },
 		{ note: "D", quality: "m7" },
@@ -7,7 +9,7 @@
 	];
 	export let maxChords = 12;
 	const notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
-	const qualities = ["M", "m", "dim", "M7", "m7", "sus2", "sus4", "dim7", "m9", "M9"];
+	const qualities = ["M", "m", "dim", "M7", "m7", "sus2", "sus4", "M9", "m9"];
 	//Add random chord if there are less than maxChords chords
 	const addChord = () => {
 		if (selectedChords.length < maxChords) {
@@ -30,7 +32,7 @@
 
 <div class="flex max-w-xl flex-wrap justify-center">
 	{#each selectedChords as _, chord}
-		<button class="m-3 flex flex-col rounded-lg bg-white p-1 shadow-lg transition duration-300 ease-out hover:-translate-y-1 hover:scale-110">
+		<button on:click={() => dispatch("chordPressed", chord)} class="m-3 flex flex-col rounded-lg bg-white p-1 shadow-lg transition duration-300 ease-out hover:-translate-y-1 hover:scale-110">
 			<select class="m-2 bg-transparent text-center font-semibold " bind:value={selectedChords[chord].note}>
 				{#each notes as note}
 					<option value={note}>{note}</option>
